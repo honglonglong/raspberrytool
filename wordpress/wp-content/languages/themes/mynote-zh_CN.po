@@ -1,0 +1,560 @@
+# Translation of Themes - Mynote in Chinese (China)
+# This file is distributed under the same license as the Themes - Mynote package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-05-31 07:23:05+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: zh_CN\n"
+"Project-Id-Version: Themes - Mynote\n"
+
+#. Description of the theme
+msgid "Mynote is a responsive, clean, Markdown friendly WordPress blog theme. It is based on Bootstrap 4 and Fontawesome 5. It is suitable for programming, business, technical, professional, niche and any kind of blogging sites. Mynote has landing-page templates so that can your highly customize your homepage, make your website unique and professional."
+msgstr "Mynote 是一款具备回应式设计、简洁且对 Markdown 语法友善的 WordPress 部落格式布景主题。它以 Bootstrap 4 及 Fontawesome 5 为基础进行开发，非常适合开发者网站、商务网站、技术类网站、专业导向网站及各种类型的部落格网站。 MyNote 内建到达页面范本，因此网站管理员可为网站首页进行完整自订，让网站外观有独特、专业的外观。"
+
+#. Theme Name of the theme
+#: inc/template-tags.php:579
+msgid "Mynote"
+msgstr "Mynote"
+
+#: inc/customer/layout.php:202
+msgid "Social Icon Size"
+msgstr "社群网站图示大小"
+
+#: inc/customer/layout.php:206
+msgid "Choose a preferred icon size."
+msgstr "选择偏好的图片尺寸"
+
+#: inc/customer/layout.php:208
+msgid "Small - 32 x 32"
+msgstr "小 - 32 x 32"
+
+#: inc/customer/layout.php:209
+msgid "Medium - 40 x 40"
+msgstr "中 - 40 x 40"
+
+#: inc/customer/layout.php:210
+msgid "Large - 48 x 48"
+msgstr "大 - 48 x 48"
+
+#: inc/customer/layout.php:211
+msgid "Extra large - 64 x 64"
+msgstr "特大 - 64 x 64"
+
+#: inc/customer/layout.php:224
+msgid "Choose a preferred layout for footer section."
+msgstr "为页尾区段选取偏好的版面配置。"
+
+#: inc/customer/layout.php:220
+msgid "Footer Location"
+msgstr "页尾位置"
+
+#: inc/customer/post-card.php:100
+msgid "Would you like to display the border of the post card?"
+msgstr "设定是否显示文章卡片的框线。"
+
+#: inc/customer/post-card.php:97
+msgid "Border"
+msgstr "框线"
+
+#: inc/customer/about.php:64
+msgid "Mynote is a responsive theme (RWD, responsive web design). However, if you would like to disable RWD, here it is."
+msgstr "Mynote 是一款回应式网页设计布景主题 (RWD，Responsive Web Design)。如需停用 RWD 功能，请在这里进行设定。"
+
+#: inc/customer/about.php:61
+msgid "RWD"
+msgstr "RWD"
+
+#: inc/customer/about.php:50
+msgid "About"
+msgstr "关于"
+
+#: inc/customer/about.php:24
+msgid "Mynote is an open source project on GitHub, any suggestions to improve this theme are welcome. Please visit:"
+msgstr "Mynote 是一个 GitHub 上的开源专案，欢迎对这款布景主题提供改进建议。如有任何建议，请造访以下连结:"
+
+#: inc/customer/about.php:18
+msgid "About Mynote Theme"
+msgstr "关于 MyNote 布景主题"
+
+#: inc/customer/progress-bar.php:32
+msgid "Progress Bar"
+msgstr "阅读进度列"
+
+#: inc/customer/layout.php:22
+msgid "Layout"
+msgstr "版面配置"
+
+#: inc/customer/homepage.php:31
+msgid "Scrolling down button"
+msgstr "向下卷动按钮"
+
+#: inc/customer/post-card.php:26
+msgid "Post Card"
+msgstr "文章卡片"
+
+#: inc/customer/post-page.php:27
+msgid "Post Page"
+msgstr "文章页面"
+
+#: inc/customer/navbar.php:35
+msgid "Navbar"
+msgstr "导览列"
+
+#: inc/customer/post-page.php:116
+msgid "Comment Section"
+msgstr "留言区段"
+
+#: inc/customer/post-page.php:106
+msgid "Author Card"
+msgstr "作者卡片"
+
+#: inc/customer/post-page.php:96
+msgid "Featured Image"
+msgstr "精选图片"
+
+#: inc/customer/post-page.php:86
+msgid "Post Author and Date"
+msgstr "文章作者及发布日期"
+
+#: inc/customer/post-page.php:76
+msgid "Breadcrumb"
+msgstr "导览标记"
+
+#: inc/customer/homepage.php:34
+msgid "Would you like to display the scrolling down button? (desktop version)"
+msgstr "设定是否在桌面版网站显示向下卷动按钮。"
+
+#: inc/customer/post-card.php:89
+msgid "Would you like to display the footer of the post card?"
+msgstr "设定是否显示文章卡片的页尾。"
+
+#: inc/customer/post-card.php:78
+msgid "Would you like to display the header of the post card? (Post thumbnail is located on this section. Choosing `No` will hide it.)"
+msgstr "设定是否显示文章卡片的页首。文章缩图会显示在这个区段，选取 [否] 以隐藏文章缩图。"
+
+#: inc/customer/post-card.php:75
+msgid "Header"
+msgstr "页首"
+
+#: inc/customer/layout.php:156 inc/customer/layout.php:173
+msgid "Adjust the number of columns per row."
+msgstr "设定内容列的每行栏位数量。"
+
+#: inc/customer/layout.php:152 inc/customer/layout.php:169
+msgid "Columns"
+msgstr "版面栏位数量"
+
+#: inc/customer/layout.php:124 inc/customer/layout.php:140
+#: inc/customer/layout.php:190
+msgid "Choose a preferred layout for desktop version."
+msgstr "为桌面版网站选取偏好的版面配置。"
+
+#: inc/customer/layout.php:120 inc/customer/layout.php:136
+#: inc/customer/layout.php:186
+msgid "Sidebar Location"
+msgstr "资讯栏位置"
+
+#: inc/customer/layout.php:48
+msgid "Post"
+msgstr "文章"
+
+#: inc/customer/layout.php:40
+msgid "Archive"
+msgstr "汇整"
+
+#: functions.php:216
+msgid "Add widgets here to appear in your sidebar on archive pages."
+msgstr "在这里新增小工具便能显示于汇整页面的资讯栏。"
+
+#: functions.php:214
+msgid "Archive Sidebar"
+msgstr "汇整页面资讯栏"
+
+#: functions.php:206
+msgid "Add widgets here to appear in your sidebar on homepage."
+msgstr "在这里新增小工具便能显示于首页的资讯栏。"
+
+#: functions.php:204
+msgid "Homepage Sidebar"
+msgstr "首页资讯栏"
+
+#: functions.php:156
+msgid "Add widgets here to appear in your sidebar on blog posts."
+msgstr "在这里新增小工具便能显示于网页文章页面的资讯栏。"
+
+#: searchform.php:19
+msgid "To search, type and hit enter."
+msgstr "输入关键字后按下 Enter 键进行搜寻"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "留言功能已关闭。"
+
+#: comments.php:50
+msgid "Comments"
+msgstr "留言"
+
+#: inc/template-functions.php:293
+msgid "Email"
+msgstr "电子邮件地址"
+
+#: inc/template-functions.php:282
+msgid "Name"
+msgstr "留言者姓名"
+
+#: inc/template-functions.php:261
+msgid "Your email address will not be published."
+msgstr "发布留言必须填写的电子邮件地址不会公开。"
+
+#: inc/template-functions.php:255
+msgid "Write a Reply or Comment"
+msgstr "撰写回覆或留言"
+
+#: inc/template-functions.php:254
+msgid "Send"
+msgstr "送出留言"
+
+#: inc/template-functions.php:221
+msgid "Your comment is awaiting moderation."
+msgstr "你的留言正在等候审阅。"
+
+#. translators: %s: days
+#: inc/template-functions.php:211
+msgid "commented %s ago"
+msgstr "发布于 %s 前"
+
+#: inc/template-functions.php:146
+msgid "(Edit)"
+msgstr "(编辑)"
+
+#: inc/template-functions.php:146
+msgid "Pingback:"
+msgstr "自动引用通知:"
+
+#: inc/template-functions.php:76
+msgid "read more"
+msgstr "阅读全文"
+
+#: inc/customer/progress-bar.php:189
+msgid "Border Color"
+msgstr "框线色彩"
+
+#: inc/customer/progress-bar.php:179
+msgid "Text Color"
+msgstr "文字色彩"
+
+#: inc/customer/progress-bar.php:158
+msgid "Custom"
+msgstr "自订"
+
+#: inc/customer/progress-bar.php:157
+msgid "As same as website menu"
+msgstr "与网站选单相同"
+
+#: inc/customer/navbar.php:348 inc/customer/progress-bar.php:156
+msgid "Default"
+msgstr "预设"
+
+#: inc/customer/progress-bar.php:154
+msgid "Choose a preferred color pattern and apply it to the progress bar."
+msgstr "选取偏好的色彩模式并套用至阅读进度列。"
+
+#: inc/customer/progress-bar.php:150
+msgid "Color Pattern"
+msgstr "色彩模式"
+
+#: inc/customer/progress-bar.php:142
+msgid "Would you like to display a percentage number on the progress bar?"
+msgstr "在阅读进度列上显示阅读进度百分比数字。"
+
+#: inc/customer/progress-bar.php:139
+msgid "Display Percentage Number"
+msgstr "显示百分比数字"
+
+#: inc/customer/progress-bar.php:131
+msgid "Would you like to display a progress bar while reading?"
+msgstr "阅读时显示阅读进度列。"
+
+#: inc/customer/progress-bar.php:128
+msgid "Display Progress Bar"
+msgstr "显示阅读进度列"
+
+#: inc/customer/navbar.php:311
+msgid "Placeholder Color"
+msgstr "预留文字色彩"
+
+#: inc/customer/navbar.php:303
+msgid "Would you like to display a search bar in header navbar area?"
+msgstr "在页首导览列区域显示搜寻框。"
+
+#: inc/customer/navbar.php:300
+msgid "Display a Search Bar"
+msgstr "显示搜寻框"
+
+#: inc/customer/navbar.php:205 inc/customer/navbar.php:264
+msgid "Link Hover Color"
+msgstr "连结游标暂留色彩"
+
+#: inc/customer/navbar.php:194 inc/customer/navbar.php:254
+msgid "Link Color"
+msgstr "连结色彩"
+
+#: inc/customer/navbar.php:182 inc/customer/navbar.php:195
+#: inc/customer/navbar.php:206 inc/customer/navbar.php:219
+#: inc/customer/navbar.php:232
+msgid "This option is for homepage only."
+msgstr "这项设定仅套用至首页。"
+
+#: inc/customer/navbar.php:181 inc/customer/navbar.php:242
+#: inc/customer/navbar.php:331 inc/customer/progress-bar.php:167
+msgid "Background Color"
+msgstr "背景色彩"
+
+#: inc/customer/progress-bar.php:51
+msgid "Customize the color pattern of the page progress bar."
+msgstr "自订页面阅读进度列色彩模式。"
+
+#: inc/customer/progress-bar.php:50
+msgid "Color"
+msgstr "色彩"
+
+#: inc/customer/progress-bar.php:42
+msgid "The basic settings of the page progress bar."
+msgstr "页面阅读进度列基本设定。"
+
+#: inc/customer/progress-bar.php:41
+msgid "Basic Settings"
+msgstr "基本设定"
+
+#: inc/customer/navbar.php:61
+msgid "Search Bar"
+msgstr "搜寻框"
+
+#: inc/template-functions.php:304 inc/customer/navbar.php:53
+msgid "Website"
+msgstr "网站"
+
+#: inc/customer/navbar.php:45 inc/customer/layout.php:32
+msgid "Homepage"
+msgstr "首页"
+
+#: inc/template-tags.php:579
+msgid "Theme by"
+msgstr "本站采用的布景主题为"
+
+#: inc/template-tags.php:575
+msgid "All rights reserved."
+msgstr "保留一切权利。"
+
+#: inc/template-tags.php:575
+msgid "Copyright"
+msgstr "著作权"
+
+#: inc/template-functions.php:187 inc/template-tags.php:516
+msgid "Author"
+msgstr "作者"
+
+#: inc/template-tags.php:463
+msgctxt "%s"
+msgid "written %s ago"
+msgstr "发布于 %s前"
+
+#: inc/template-tags.php:456
+msgid "%1$s @ %2$s"
+msgstr "%1$s%2$s"
+
+#: inc/template-tags.php:432
+msgid "Date"
+msgstr "日期"
+
+#: inc/template-tags.php:395
+msgid "Read"
+msgstr "阅读"
+
+#: inc/template-tags.php:375
+msgid "Comment"
+msgstr "留言"
+
+#: inc/template-tags.php:334
+msgid "Edit"
+msgstr "编辑"
+
+#: inc/template-tags.php:231
+msgid "Last"
+msgstr "最后"
+
+#: inc/template-tags.php:230
+msgid "Last Page"
+msgstr "最末页"
+
+#: comments.php:62 inc/template-tags.php:223
+msgid "Next"
+msgstr "往后"
+
+#: inc/template-tags.php:222
+msgid "Next Page"
+msgstr "下一页"
+
+#: inc/template-tags.php:205
+msgid "Current Page"
+msgstr "目前页面"
+
+#: comments.php:61 inc/template-tags.php:195
+msgid "Previous"
+msgstr "往前"
+
+#: inc/template-tags.php:194
+msgid "Previous Page"
+msgstr "上一页"
+
+#: inc/template-tags.php:187
+msgid "First"
+msgstr "最前"
+
+#: inc/template-tags.php:186
+msgid "First Page"
+msgstr "第 1 页"
+
+#: inc/template-tags.php:176
+msgid "Page navigation"
+msgstr "页面导览"
+
+#: inc/template-tags.php:101 inc/template-tags.php:617
+msgid "Home"
+msgstr "首页"
+
+#: search.php:27
+msgid "%s Search Results for %s"
+msgstr "%s 个「%s」的搜寻结果"
+
+#. Template Name of the theme
+msgid "Landing page"
+msgstr "到达页面"
+
+#. Template Name of the theme
+msgid "Landing Page (full)"
+msgstr "到达页面 (全萤幕)"
+
+#: inc/template-hook-functions.php:71
+msgid "Toggle navigation"
+msgstr "开启/关闭导览列"
+
+#: inc/template-hook-functions.php:52
+msgid "Logo"
+msgstr "标志"
+
+#: single.php:115
+msgid "Next Post"
+msgstr "下一篇文章"
+
+#: single.php:114
+msgid "Previous Post"
+msgstr "上一篇文章"
+
+#: template-parts/content-none.php:18 single.php:94 page.php:87
+msgid "Sorry, nothing to display."
+msgstr "很抱歉，没有可供显示的内容。"
+
+#: single.php:74 page.php:72
+msgid "Last modified: "
+msgstr "最后修改日期:"
+
+#: template-parts/page-landing.php:69 single.php:64 page.php:63
+msgid "Pages:"
+msgstr "页次:"
+
+#. Template Name of the theme
+msgid "Landing Page (simple)"
+msgstr "到达页面 (简单)"
+
+#: 404.php:34
+msgid "Return home?"
+msgstr "返回首页"
+
+#: 404.php:29
+msgid "The page you are looking for does not exist or it may have been moved."
+msgstr "要求的页面不存在，或页面已移除。"
+
+#: 404.php:21
+msgid "Page not found"
+msgstr "找不到符合条件的页面"
+
+#: functions.php:196
+msgid "Add widgets here to appear in your homepage intro section."
+msgstr "在这里新增小工具便能显示于首页简介区段。"
+
+#: functions.php:194
+msgid "Homepage Intro"
+msgstr "首页简介"
+
+#: functions.php:186
+msgid "Add widgets here to appear in your homepage middle section."
+msgstr "在这里新增小工具便能显示于首页中央区段。"
+
+#: functions.php:184
+msgid "Homepage Middle"
+msgstr "首页中央"
+
+#: functions.php:174
+msgid "Sticky Sidebar"
+msgstr "固定位置资讯栏"
+
+#: functions.php:166
+msgid "Add widgets here to appear in your footer."
+msgstr "在这里新增小工具便能显示于网站页尾。"
+
+#: functions.php:164 inc/customer/post-card.php:86 inc/customer/layout.php:56
+msgid "Footer"
+msgstr "页尾"
+
+#: functions.php:176
+msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr "在这里新增小工具便能显示于网站文章页面及汇整页面的资讯栏。"
+
+#: functions.php:154
+msgid "Sidebar"
+msgstr "资讯栏"
+
+#: functions.php:145
+msgid "Social Links Menu"
+msgstr "社群网路连结选单"
+
+#: functions.php:144
+msgid "Footer Menu"
+msgstr "页尾选单"
+
+#: functions.php:143
+msgid "Sidebar Menu"
+msgstr "资讯栏选单"
+
+#: functions.php:142
+msgid "Header Menu"
+msgstr "页首选单"
+
+#: inc/template-hook-functions.php:274 inc/template-tags.php:212
+msgid "Page"
+msgstr "页次"
+
+#: inc/template-hook-functions.php:273
+msgid "Next page"
+msgstr "下一页"
+
+#: inc/template-hook-functions.php:272
+msgid "Previous page"
+msgstr "上一页"
+
+#. Theme URI of the theme
+msgid "https://terryl.in/en/repository/mynote/"
+msgstr "https://terryl.in/en/repository/mynote/"
+
+#. Author URI of the theme
+msgid "https://terryl.in"
+msgstr "https://terryl.in"
+
+#. Author of the theme
+msgid "Terry Lin"
+msgstr "Terry Lin"

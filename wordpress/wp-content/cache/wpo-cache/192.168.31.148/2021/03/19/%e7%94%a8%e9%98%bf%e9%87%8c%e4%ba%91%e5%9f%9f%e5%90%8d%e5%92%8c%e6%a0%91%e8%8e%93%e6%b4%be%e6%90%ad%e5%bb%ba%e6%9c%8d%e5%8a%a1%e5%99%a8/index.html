@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang=zh class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>用阿里云域名和树莓派搭建服务器 &#8211; 一天</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="一天 &raquo; Feed" href="http://192.168.31.148:8000/feed/" />
+<link rel="alternate" type="application/rss+xml" title="一天 &raquo; 评论Feed" href="http://192.168.31.148:8000/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="一天 &raquo; 用阿里云域名和树莓派搭建服务器评论Feed" href="http://192.168.31.148:8000/2021/03/19/%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91%e5%9f%9f%e5%90%8d%e5%92%8c%e6%a0%91%e8%8e%93%e6%b4%be%e6%90%ad%e5%bb%ba%e6%9c%8d%e5%8a%a1%e5%99%a8/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/192.168.31.148:8000\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='http://192.168.31.148:8000/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='http://192.168.31.148:8000/wp-content/themes/mynote/assets/css/bootstrap.min.css?ver=4.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css'  href='http://192.168.31.148:8000/wp-content/themes/mynote/assets/css/fontawesome-all.min.css?ver=5.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='mynote-font-roboto-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400&#038;ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='mynote-css'  href='http://192.168.31.148:8000/wp-content/themes/mynote/style.css?ver=2.0.3' type='text/css' media='all' />
+<script type='text/javascript' src='http://192.168.31.148:8000/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='http://192.168.31.148:8000/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='http://192.168.31.148:8000/wp-content/themes/mynote/assets/js/bootstrap.bundle.min.js?ver=4.1.0' id='bootstrap-js'></script>
+<link rel="https://api.w.org/" href="http://192.168.31.148:8000/wp-json/" /><link rel="alternate" type="application/json" href="http://192.168.31.148:8000/wp-json/wp/v2/posts/31" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://192.168.31.148:8000/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://192.168.31.148:8000/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.7.2" />
+<link rel="canonical" href="http://192.168.31.148:8000/2021/03/19/%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91%e5%9f%9f%e5%90%8d%e5%92%8c%e6%a0%91%e8%8e%93%e6%b4%be%e6%90%ad%e5%bb%ba%e6%9c%8d%e5%8a%a1%e5%99%a8/" />
+<link rel='shortlink' href='http://192.168.31.148:8000/?p=31' />
+<link rel="alternate" type="application/json+oembed" href="http://192.168.31.148:8000/wp-json/oembed/1.0/embed?url=http%3A%2F%2F192.168.31.148%3A8000%2F2021%2F03%2F19%2F%25e7%2594%25a8%25e9%2598%25bf%25e9%2587%258c%25e4%25ba%2591%25e5%259f%259f%25e5%2590%258d%25e5%2592%258c%25e6%25a0%2591%25e8%258e%2593%25e6%25b4%25be%25e6%2590%25ad%25e5%25bb%25ba%25e6%259c%258d%25e5%258a%25a1%25e5%2599%25a8%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://192.168.31.148:8000/wp-json/oembed/1.0/embed?url=http%3A%2F%2F192.168.31.148%3A8000%2F2021%2F03%2F19%2F%25e7%2594%25a8%25e9%2598%25bf%25e9%2587%258c%25e4%25ba%2591%25e5%259f%259f%25e5%2590%258d%25e5%2592%258c%25e6%25a0%2591%25e8%258e%2593%25e6%25b4%25be%25e6%2590%25ad%25e5%25bb%25ba%25e6%259c%258d%25e5%258a%25a1%25e5%2599%25a8%2F&#038;format=xml" />
+<link rel="alternate" href="http://192.168.31.148/2021/03/19/%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91%e5%9f%9f%e5%90%8d%e5%92%8c%e6%a0%91%e8%8e%93%e6%b4%be%e6%90%ad%e5%bb%ba%e6%9c%8d%e5%8a%a1%e5%99%a8/" hreflang="x-default" /><style id="mynote-customizer">
+#header-desc-text { color: ffffff !important; }
+@media (max-width: 768px) {
+.footer-columns { text-align: center !important; }
+.footer-columns .footer-column-left { text-align: center !important; }
+}
+.scroll-area { display: block !important; }
+
+</style>
+</head>
+<body class="post-template-default single single-post postid-31 single-format-standard multiple-domain-192-168-31-148-8000 ">
+
+	
+	
+	<div class="wrapper">
+
+		
+		<header class="header clear" role="banner">
+			<div class="container">
+
+							<nav class="navbar navbar-expand-lg navbar-dark " role="navigation">
+				
+									<div id="mynote-nav-bar" class="collapse navbar-collapse"><ul id="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95" class="navbar-nav mr-auto"><li  id="menu-item-123" class="nav-item"><a href="http://192.168.31.148:8000/" class="nav-link">首页</a></li><li  id="menu-item-38" class="nav-item"><a href="http://192.168.31.148:8000/about/" class="nav-link">我是谁</a></li><li  id="menu-item-111" class="nav-item"><a href="http://192.168.31.148:8000/shuoshuo/" class="nav-link">说说</a></li></ul></div>				
+				<div class="search-bar">
+					
+<form id="search-form" class="search" method="get" action="http://192.168.31.148:8000" role="search" autocomplete="off">
+	<input type="text" name="s" class="search-input" placeholder="输入关键字后按下 Enter 键进行搜寻">
+	<span class="search-icon" onclick="document.getElementById('search-form').submit();">
+		<i class="fas fa-search"></i>
+	</span>
+</form>
+				</div>
+
+				<button class="navbar-toggler" 
+					type="button" data-toggle="collapse" 
+					data-target="#mynote-nav-bar" 
+					aria-controls="mynote-nav-bar" 
+					aria-expanded="false" 
+					aria-label="开启/关闭导览列">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</nav>
+		
+			</div><!-- .container -->
+		</header>
+
+		
+		<div class="single-post-title-bar clear" role="banner">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
+					<a class="navbar-brand" href="http://192.168.31.148:8000"></a>
+					<div id="progress-title"></div>
+				</nav>
+			</div>
+			<div class="progress-wrapper">
+				<div class="progress-label"></div>
+				<progress></progress>
+			</div>
+		</div>
+	
+<div class="data-schema is-single" itemscope itemtype="http://schema.org/Article">
+
+			<nav class="breadcrumb">
+			<div class="container">
+				<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a href="http://192.168.31.148:8000" itemprop="item">
+							<span itemprop="name"><i class="fas fa-globe"></i><span class="sr-only">首页</span></span>
+						</a>
+						<meta itemprop="position" content="1">
+					</li>
+										<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a href="http://192.168.31.148:8000/category/%e6%8a%80%e6%9c%af/" itemprop="item">
+							<span itemprop="name">技术</span>
+						</a>
+						<meta itemprop="position" content="2">
+					</li>
+															<li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<span itemprop="name">用阿里云域名和树莓派搭建服务器</span>
+						<meta itemprop="item" content="http://192.168.31.148:8000/2021/03/19/%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91%e5%9f%9f%e5%90%8d%e5%92%8c%e6%a0%91%e8%8e%93%e6%b4%be%e6%90%ad%e5%bb%ba%e6%9c%8d%e5%8a%a1%e5%99%a8/">
+						<meta itemprop="position" content="3">
+					</li>
+				</ul>
+			</div>
+		</nav>
+							<div class="single-post-header">
+						<div class="container">
+
+							<h1 id="post-title" itemprop="headline">用阿里云域名和树莓派搭建服务器</h1>
+							<div class="post-mynote-buttons">
+
+																			<div class="btn-group column-control">
+			<div class="btn-counter text-only active" data-target="#aside-container" role="button">		
+				<div class="btn"><i class="fas fa-columns"></i></div>
+			</div>
+			<div class="btn-counter text-only" data-target="#sidebar" role="button">		
+				<div class="btn"><i class="fas fa-list-ul"></i></div>
+			</div> 
+		</div>
+									
+																
+			<a href="http://192.168.31.148:8000/2021/03/19/%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91%e5%9f%9f%e5%90%8d%e5%92%8c%e6%a0%91%e8%8e%93%e6%b4%be%e6%90%ad%e5%bb%ba%e6%9c%8d%e5%8a%a1%e5%99%a8/#comments" class="button-like-link">
+				<div class="btn-counter">
+					<div class="btn">
+						<i class="fas fa-comment-dots"></i>
+					</div>
+					<div class="count-box">0</div>
+				</div>
+			</a>
+									</div><!-- .post-mynote-buttons -->
+
+															<div class="post-meta">
+									<div class="author-posted-date"><img src="http://0.gravatar.com/avatar/f8b3839f9f0d7453305dd7ca751cc054?s=40&#038;d=mm&#038;r=g" class="rounded-circle poster-avatar" align="middle"> <a href="http://192.168.31.148:8000/author/honglonglong/" title="written 2021年3月19日下午4:47" class="author-link">夏至夕阳</a> <time itemprop="datePublished" datetime="2021-03-19T16:47:06+08:00">发布于 3月前</time></div>								</div>
+							
+						</div><!-- .container -->
+					</div><!-- .single-post-header -->
+				
+	<div class="container">
+		<div class="row row-layout-choice-post">
+			<main id="main-container" class="col-lg-8 col-md-8 col-sm-12" role="main">
+
+				
+					
+						
+						<article id="post-31" class="markdown-body post-31 post type-post status-publish format-standard hentry category-11 tag-18 tag-17 tag-16">
+
+								
+							<div itemprop="articleBody">
+
+								
+<p>材料：</p>
+
+
+
+<p>小米路由器，树莓派，Debian系统，阿里云域名及DNS解析服务。</p>
+
+
+
+<hr class="wp-block-separator is-style-wide"/>
+
+
+
+<p>阿里云和DNS解析已经加好域名了，测试SSH可以连接成功，说明域名生效，22端口转发成功。</p>
+
+
+
+<p>接下来准备配置apache，看80端口能不能转成功，之前一直不成功，内网访问可以，外网就不行。所以临时方案是用花生壳，现在准备换成域名，因为花生壳有点贵。</p>
+
+
+
+<p>访问失败。。。从树莓派自己telnet连接新域名是成功的。看来还是小米路由封了外部连接80端口。</p>
+
+
+
+<p>想想办法怎么继续呢。</p>
+
+
+
+<p>解决办法就是新买了个路由器：ASUS <strong>RT-AC68U</strong></p>
+
+
+
+<p>把wifi名字改回原来路由器一模一样，就不需要重新连接一大堆设备了。</p>
+
+
+
+<p>重新配置端口转发，80端口被路由器自己的管理后台占用了，使用8080端口吧。</p>
+
+
+
+<p>树莓派需要重新配置，改用8080端口吧，竟然访问不了，原来apache需要配置监听：</p>
+
+
+
+<pre class="wp-block-code"><code>sudo vi /etc/apache2/ports.conf
+#添加
+Listen 8080</code></pre>
+
+
+
+<p>还是不好用，试了一下8000端口，好用！</p>
+
+
+
+<p>用8080试着转了一下ssh，不好用！</p>
+
+
+
+<p>看来是路由器封住8080端口了，先用8000端口了。</p>
+
+
+
+<p>再改一遍，Apache配置，WordPress加了插件支持多domain，得把端口也加上。</p>
+
+
+
+<p>好用了！博客搭起来了，先这么啷当着运行一段时间看看，暂时还没必要上云。</p>
+
+							</div>
+						</article>
+
+						<section class="modified-date" itemprop="dateModified" content="2021-03-20T23:01:37+08:00">
+							最后修改日期:							2021年3月20日						</section>
+
+						<section class="tags">
+							<a href="http://192.168.31.148:8000/tag/%e5%86%85%e7%bd%91%e7%a9%bf%e9%80%8f/" rel="tag">内网穿透</a><a href="http://192.168.31.148:8000/tag/%e5%9f%9f%e5%90%8d%e7%bb%91%e5%ae%9a/" rel="tag">域名绑定</a><a href="http://192.168.31.148:8000/tag/%e7%ab%af%e5%8f%a3%e8%bd%ac%e5%8f%91/" rel="tag">端口转发</a>						</section>
+
+																<h3 class="section-title">作者</h3>
+			<aside class="author-card" itemscope itemprop="author" itemtype="http://schema.org/Person">
+				<div class="author-avatar">
+					<img src="http://0.gravatar.com/avatar/f8b3839f9f0d7453305dd7ca751cc054?s=96&#038;d=mm&#038;r=g" class="rounded-circle" itemprop="image">
+				</div>
+				<div class="author-info">
+					<div class="author-title">
+						<a href="http://192.168.31.148:8000/author/honglonglong/" itemprop="name">
+							夏至夕阳						</a>
+					</div>
+					<div class="author-description" itemprop="description">  
+											</div>
+				</div>
+			</aside>
+								
+													
+<div id="comments" class="discussion-wrapper">
+	<h3 class="section-title">
+		留言	</h3>
+	<div class="discussion-timeline">
+
+		
+		
+		
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="section-title">撰写回覆或留言 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2021/03/19/%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91%e5%9f%9f%e5%90%8d%e5%92%8c%e6%a0%91%e8%8e%93%e6%b4%be%e6%90%ad%e5%bb%ba%e6%9c%8d%e5%8a%a1%e5%99%a8/#respond" style="display:none;">取消回复</a></small></h3><form action="http://192.168.31.148:8000/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes">发布留言必须填写的电子邮件地址不会公开。</p><div class="form-row">
+
+			<div class="col-sm-6 my-1">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text"><i class="fas fa-user"></i></div>
+					</div>
+					<input id="author" class="form-control" placeholder="留言者姓名" name="author" type="text" value="" maxlength="245" />
+				</div>
+			</div>
+		
+
+			<div class="col-sm-6 my-1">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text"><i class="fas fa-envelope"></i></div>
+					</div>
+					<input id="email" class="form-control" placeholder="电子邮件地址" name="email" type="text" value="" maxlength="100" />
+				</div>
+			</div>
+		
+
+			<div class="col-sm-12 my-1">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text"><i class="fas fa-globe"></i></div>
+					</div>
+					<input id="url" class="form-control" placeholder="网站" name="url" type="text" value="" maxlength="200" />
+				</div>
+			</div>
+		
+</div>
+
+			<div class="form-row">
+				<div class="col-sm-12 my-1">
+					<textarea id="comment" name="comment" class="form-control" aria-required="true"></textarea>
+				</div>
+			</div>
+		<p class="form-submit"><input name="submit" type="submit" id="submit" class="btn btn-green my-1" value="送出留言" /> <input type='hidden' name='comment_post_ID' value='31' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c0fb0d7db1" /></p><input type="hidden" id="ak_js" name="ak_js" value="245"/><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea></form>	</div><!-- #respond -->
+	
+	</div>
+</div>
+
+						
+					
+				
+			</main>
+
+						<aside id="aside-container" class="col-lg-4 col-md-4 col-sm-12" role="complementary">
+									<div id="sidebar" class="sidebar">
+						<section id="search-2" class="widget widget_search">
+<form id="search-form" class="search" method="get" action="http://192.168.31.148:8000" role="search" autocomplete="off">
+	<input type="text" name="s" class="search-input" placeholder="输入关键字后按下 Enter 键进行搜寻">
+	<span class="search-icon" onclick="document.getElementById('search-form').submit();">
+		<i class="fas fa-search"></i>
+	</span>
+</form>
+</section>
+		<section id="recent-posts-2" class="widget widget_recent_entries">
+		<h2 class="widget-title">近期文章</h2>
+		<ul>
+											<li>
+					<a href="http://192.168.31.148:8000/2021/03/19/%e7%94%a8%e9%98%bf%e9%87%8c%e4%ba%91%e5%9f%9f%e5%90%8d%e5%92%8c%e6%a0%91%e8%8e%93%e6%b4%be%e6%90%ad%e5%bb%ba%e6%9c%8d%e5%8a%a1%e5%99%a8/" aria-current="page">用阿里云域名和树莓派搭建服务器</a>
+									</li>
+											<li>
+					<a href="http://192.168.31.148:8000/2021/03/11/flask%e8%bf%90%e8%a1%8cpython-web-application/">Flask运行Python Web Application</a>
+									</li>
+											<li>
+					<a href="http://192.168.31.148:8000/2021/03/10/django%e5%ad%a6%e4%b9%a0/">Django学习</a>
+									</li>
+					</ul>
+
+		</section><section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>
+			<ul>
+					<li><a href='http://192.168.31.148:8000/2021/03/'>2021年3月</a></li>
+			</ul>
+
+			</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类</h2>
+			<ul>
+					<li class="cat-item cat-item-11"><a href="http://192.168.31.148:8000/category/%e6%8a%80%e6%9c%af/">技术</a>
+</li>
+			</ul>
+
+			</section>					</div>
+											</aside>
+			
+		</div><!-- .row -->
+
+		
+	<nav class="navigation post-navigation" role="navigation" aria-label="文章">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://192.168.31.148:8000/2021/03/11/flask%e8%bf%90%e8%a1%8cpython-web-application/" rel="prev"><i class="fas fa-angle-left"></i> <span class="screen-reader-text">上一篇文章</span> Flask运行Python Web Application</a></div></div>
+	</nav>
+	</div><!-- .container -->
+
+	
+</div><!-- .data-schema -->
+
+
+		<footer class="footer" role="contentinfo">
+
+						<div class="container footer-columns">
+				<div class="footer-column-left">
+					<div>著作权 &copy; 2021 <strong><a href="http://192.168.31.148:8000">一天</a></strong>. 保留一切权利。 本站采用的布景主题为 <a href="https://terryl.in/" target="_blank">Mynote</a>. </div>
+					<div></div>
+				</div>
+				<div class="footer-column-right">
+									</div>
+			</div>
+		
+		</footer>
+
+		
+	</div><!-- .wrapper -->
+
+			<script>
+
+		jQuery( document ).ready(function( $ ) {
+			const win = $( window );
+			const doc = $( document );
+			const progressBar = $( 'progress' );
+			const progressLabel = $( '.progress-label' );
+			const setValue = () => win.scrollTop();
+			const setMax = () => doc.height() - win.height();
+			const setPercent = () => Math.round( win.scrollTop() / (doc.height() - win.height()) * 100 );
+			const pageTitle = $( '#post-title' );
+			const pageTitleTop = pageTitle.offset().top;
+			const progressBarContainer = $( '.single-post-title-bar' );
+			const headerNavBrand = $( '.header .navbar-brand' );
+			const progressTitle = $( '#progress-title' );
+			const headerBarContainer = $( '.header .container' );
+
+			progressLabel.text( setPercent() + '%' );
+			progressBar.attr(
+				{
+					value: setValue(),
+					max: setMax() 
+				}
+			);
+
+			doc.on( 'scroll', () => {
+				progressLabel.text( setPercent() + '%' );
+				progressBar.attr(
+					{
+						value: setValue()
+					} 
+				);
+
+				if ( doc.scrollTop() > headerNavBrand.height() ) {
+					//headerBarContainer.fadeOut( 800 );
+					progressTitle.html( pageTitle.html() );
+					progressBarContainer.find( '.navbar-brand' ).html( headerNavBrand.html() );
+					progressBarContainer.fadeIn( 100 );
+					progressBarContainer.addClass( 'fixed-top' );
+					progressBarContainer.addClass( 'slide-down' );
+				} else {
+					//headerBarContainer.fadeIn( 800 );
+					progressBarContainer.removeClass( 'slide-down' );
+					progressBarContainer.fadeOut( 100 );
+
+					if ( progressBarContainer.hasClass( 'fixed-top' ) ) {
+						setTimeout(function() {
+							progressBarContainer.removeClass( 'fixed-top' );
+						}, 500);
+					}
+				}
+			});
+
+			win.on( 'resize', () => {
+				progressLabel.text( setPercent() + '%' );
+				progressBar.attr(
+					{
+						value: setValue(), 
+						max: setMax()
+					} 
+				);
+			});
+
+			// Sidebar switcher
+			$( '#main-container' ).attr( 'data-previous-class', $( '#main-container' ).attr( 'class' ) );
+
+			$( '.column-control .btn-counter' ).click(function() {
+				var target = $( this ).attr( 'data-target' );
+				if ( $( this ).hasClass( 'active' ) ) {
+					$( this ).removeClass( 'active' );
+
+					if ( target == '#aside-container' ) {
+						$( '#main-container' ).attr( 'data-previous-class', $( '#main-container' ).attr( 'class' ) );
+						$( '#main-container' ).attr( 'class', 'col col-sm-12' );
+						$( '#aside-container' ).hide();
+					}
+					if ( target == '#sidebar') {
+						$( target ).show();
+					}
+				} else {
+					$( this ).addClass( 'active' );
+
+					if ( target == '#aside-container' ) {
+						$( '#main-container' ).attr( 'class', $( '#main-container' ).attr( 'data-previous-class' ) );
+						$( '#aside-container' ).show();
+					}
+					if ( target == '#sidebar') {
+						$( target ).hide();
+					}
+				}
+
+			});
+
+			// For responsive.
+			$( '.markdown-body img' ).attr('height', '');
+		});
+
+		</script>
+			<script>
+
+		jQuery( document ).ready(function( $ ) {
+
+			$( '.scroll-area a' ).on( 'click', function(e) {
+				e.preventDefault();
+				var movingPosition = 0;
+
+				if ( $( this.hash ).offset().top > $( document ).height() - $( window ).height() ) {
+					movingPosition = $( document ).height() - $( window ).height();
+				} else {
+					movingPosition = $( this.hash ).offset().top;
+				}
+
+				$( 'html, body' ).animate({
+					scrollTop: movingPosition
+				}, 500, 'swing' );
+			});
+
+			$( 'a.go-top' ).on( 'click' ,function(e) {
+				e.preventDefault();
+				$( 'html, body' ).animate( { scrollTop: 0 }, 1000 );
+			});
+
+			$( window ).scroll( function() {      
+				var windowTop =  $( window ).scrollTop();
+				if ( windowTop > 100 ) {
+					$( 'a.go-top' ).fadeIn( 300 );
+				} else {
+					$( 'a.go-top' ).fadeOut( 300 );
+				}
+			});
+
+			$( '#mynote-nav-bar' ).on( 'show.bs.collapse' , function () {
+				$( 'body' ).addClass( 'menu-is-collapsed' );
+			});
+
+			$( '#mynote-nav-bar' ).on( 'hidden.bs.collapse' , function () {
+				$( 'body' ).removeClass( 'menu-is-collapsed' );
+			});
+
+			/*
+
+			$( '#mynote-nav-bar' ).on( 'show.bs.collapse' , function () {
+				$( 'body' ).addClass( 'menu-is-collapsed' );
+				$( '.main-header' ).css( { 'top': '-60px' } ).animate( { 'top': '0px' }, 500 );
+				$( '.has-site-logo .search-bar' ).fadeOut( 500 );
+			});
+
+			$( '#mynote-nav-bar' ).on( 'hidden.bs.collapse' , function () {
+				$( '.main-header' ).css( { 'top': '0px' } ).animate( { 'top': '-60px' }, 500 );
+				$( '.has-site-logo .search-bar' ).fadeIn( 500 );
+				setTimeout(function() {
+					$( 'body' ).removeClass( 'menu-is-collapsed' );
+				}, 500);
+				
+			}); */
+		});
+
+		</script>
+		<script type='text/javascript' src='http://192.168.31.148:8000/wp-includes/js/comment-reply.min.js?ver=5.7.2' id='comment-reply-js'></script>
+<script type='text/javascript' src='http://192.168.31.148:8000/wp-includes/js/wp-embed.min.js?ver=5.7.2' id='wp-embed-js'></script>
+<script async="async" type='text/javascript' src='http://192.168.31.148:8000/wp-content/plugins/akismet/_inc/form.js?ver=4.1.9' id='akismet-form-js'></script>
+
+	<a href="javascript:void(0);" class="go-top" style="display: none">
+		<i class="fas fa-arrow-up"></i>
+	</a>
+</body>
+</html>
+
+<!-- Cached by WP-Optimize - https://getwpo.com - Last modified: Tue, 22 Jun 2021 14:29:16 GMT -->
