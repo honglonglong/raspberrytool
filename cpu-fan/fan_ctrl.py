@@ -90,9 +90,9 @@ try:
             if (count > MAX_COUNT) and (fanSpeed != 0):
                fanSpeed = 0
                if cpuTemp >= tempSteps[len(tempSteps) - 1]:
-               	 fanSpeed = speedSteps[len(tempSteps) - 1]
+                   fanSpeed = speedSteps[len(tempSteps) - 1]
                else:
-						pass
+                   pass
 						
                fan.ChangeDutyCycle(fanSpeed)
                logging.info("Fan on @ %s, long time no change, fan speed = %.2f" % (cpuTemp, fanSpeed))
