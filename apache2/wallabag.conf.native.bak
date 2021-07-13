@@ -1,22 +1,22 @@
 <VirtualHost *:8003>
 #ServerName mydomain.dynamicdns.com
 #ServerAlias mydomain.dynamicdns.com
-DocumentRoot /var/www/html/
+DocumentRoot /var/www/html/wallabag/web
 
 #SSLEngine On
 #SSLCertificateFile /etc/letsencrypt/live/xxxxxx/fullchain.pem
 #SSLCertificateKeyFile /etc/letsencrypt/live/xxxxx/privkey.pem
-#DocumentRoot /var/www/html/wallabag/web
-#    <Directory /var/www/html/wallabag/web>
-#         Require all granted
-#
-#        <IfModule mod_rewrite.c>
-#            Options -MultiViews
-#            RewriteEngine On
-#            RewriteCond %{REQUEST_FILENAME} !-f
-#            RewriteRule ^(.*)$ app.php [QSA,L]
-#        </IfModule>
-#    </Directory>
+DocumentRoot /var/www/html/wallabag/web
+    <Directory /var/www/html/wallabag/web>
+         Require all granted
+
+        <IfModule mod_rewrite.c>
+            Options -MultiViews
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^(.*)$ app.php [QSA,L]
+        </IfModule>
+    </Directory>
 
     # uncomment the following lines if you install assets as symlinks
     # or run into problems when compiling LESS/Sass/CoffeScript assets
@@ -27,15 +27,11 @@ DocumentRoot /var/www/html/
     # optionally disable the RewriteEngine for the asset directories
     # which will allow apache to simply reply with a 404 when files are
     # not found instead of passing the request into the full symfony stack
+    <Directory /var/www/html/wallabag/web/bundles>
+        <IfModule mod_rewrite.c>
+            RewriteEngine Off
+        </IfModule>
+    </Directory>
     ErrorLog /var/log/apache2/wallabag_error.log
     CustomLog /var/log/apache2/wallabag_access.log combined
-
-	 ProxyRequests Off
-	 <Proxy *>
-		 Order Deny,allow
-		 Allow from all
-	 </Proxy>
-
-	 ProxyPass / http://localhost:7003/
-	 ProxyPassReverse / http://localhost:7003/
 </VirtualHost>

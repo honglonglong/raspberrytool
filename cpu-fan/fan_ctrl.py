@@ -94,8 +94,12 @@ try:
                else:
                    pass
 						
-               fan.ChangeDutyCycle(fanSpeed)
-               logging.info("Fan on @ %s, long time no change, fan speed = %.2f" % (cpuTemp, fanSpeed))
+               if (fanSpeed != fanSpeedOld):
+                   fan.ChangeDutyCycle(fanSpeed)
+                   logging.info("Fan on @ %s, long time no change, fan speed = %.2f" % (cpuTemp, fanSpeed))
+               else:
+                   pass
+               
                fanSpeedOld = fanSpeed
                cpuTempOld = cpuTemp #check the temp against current but not the last time, this will force the temp reduce <hyst> value
                count = 0
